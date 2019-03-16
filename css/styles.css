@@ -87,7 +87,7 @@ header {
     grid-column: 2 / 3;
 }    
 
-.nav>ul {
+.nav > ul {
     display: flex;  
     align-items: center;
     justify-content: space-between;
@@ -135,6 +135,11 @@ header {
     text-shadow: 3px 3px 20px #0b52bf;
 }
 
+.active a {
+    color: #216932;
+    text-decoration: underline;
+}
+
 .nav li:nth-child(4) {
     margin-right: 10px;
 }
@@ -143,8 +148,9 @@ header {
     display: none;
 }
 
+/* #endregion */
 
-/* Mobile Menu Item * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* #region Mobile Menu Item * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 .mobile-menu {
     position: absolute;
@@ -200,12 +206,19 @@ header {
 /* #endregion */
 
 /* #region Homepage Main */
-main {
+.grid-wrapper {
     display: grid;
-    grid-template-areas:
-        ". a ."
-        ". b .";
-    grid-template-columns: 1fr minmax(300px, 900px) 1fr;
+    grid-template-columns: 1fr minmax(250px, 900px) 1fr;
+    grid-template-areas: ". a .";
+}
+
+main {
+    grid-area: a;
+}
+
+.sidebar-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
 }
 
 main section {
@@ -268,11 +281,27 @@ section h2 {
 section h3 {
     padding: 10px;
 }
-.test1 {
-    grid-area: a;
+
+
+/* Sponsors Page */
+.sponsor-logos {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, 150px);
+    justify-content: center;
+    padding: 50px 5px;
 }
-.test2 {
-    grid-area: b;
+
+.sponsor-card {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.sponsor-card > img {
+    width: 100%;
+    object-fit: contain;
+    
 }
 
 /* #endregion */
@@ -397,6 +426,10 @@ footer button {
 
     .calltoaction > button {
         width: 75%;
+    }
+
+    .sidebar-grid {
+        grid-template-columns: 1fr;
     }
 
     .content-columns {
