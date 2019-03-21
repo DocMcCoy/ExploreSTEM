@@ -65,6 +65,20 @@ header {
     padding-bottom: 10px;
 }
 
+.calltoaction > a {
+    text-align: center;
+    width: 50%;
+    justify-self: end;
+    border: 0px;
+    border-radius: 100px;
+    background: #0b52bf;
+    color: white;
+    padding: 5px 10px;
+    grid-column: 2 / 3;
+    font-family: 'futura', sans-serif;
+    text-transform: uppercase;
+}
+
 .calltoaction > button {
     width: 50%;
     justify-self: end;
